@@ -1,0 +1,183 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Research Icons {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <!-- Header Section -->
+    <div class="header bg-primary pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-white d-inline-block mb-0">Research Topics Dashboard</h6>
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="#">Research</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Key Topics and Terms</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6 col-5 text-right">
+                        <a href="#" class="btn btn-sm btn-neutral">Add New Topic</a>
+                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt--7">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-header bg-transparent">
+                        <h3 class="mb-0">Key Topics and Terms</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row icon-examples">
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="ai" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-settings-gear-65"></i>
+                                        <span>AI</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="sustainability" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-leaf-2"></i>
+                                        <span>Sustainability</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="digital-transformation" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-laptop"></i>
+                                        <span>Digital Transformation</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="innovation" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-light-bulb-2"></i>
+                                        <span>Innovation</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="data-analytics" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-chart-bar-32"></i>
+                                        <span>Data Analytics</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="cybersecurity" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-lock-circle-open"></i>
+                                        <span>Cybersecurity</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="blockchain" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-key-25"></i>
+                                        <span>Blockchain</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="smart-cities" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-building"></i>
+                                        <span>Smart Cities</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="e-governance" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-planet"></i>
+                                        <span>E-Governance</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="health-tech" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-heart-2"></i>
+                                        <span>Health Tech</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="fintech" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-money-coins"></i>
+                                        <span>Fintech</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="education-tech" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-book-bookmark"></i>
+                                        <span>EdTech</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="transportation" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-bus-front-12"></i>
+                                        <span>Transportation</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="climate-change" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-cloud-upload-96"></i>
+                                        <span>Climate Change</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="urban-planning" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-collection"></i>
+                                        <span>Urban Planning</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="social-impact" title="Copy to clipboard">
+                                    <div>
+                                        <i class="ni ni-people"></i>
+                                        <span>Social Impact</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+<script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+
+{% endblock javascripts %}
