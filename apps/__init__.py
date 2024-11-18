@@ -7,7 +7,7 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from importlib import import_module
-from jinja2 import Markup
+from markupsafe import Markup
 import re
 
 db = SQLAlchemy()
@@ -23,9 +23,10 @@ def register_blueprints(app):
         app.register_blueprint(module.blueprint)
 
 def configure_database(app):
-    @app.before_first_request
-    def initialize_database():
-        db.create_all()
+    with app.app_context():
+        def initialize_database():
+            db.create_all()
+        initialize_database()
 
     @app.teardown_request
     def shutdown_session(exception=None):
