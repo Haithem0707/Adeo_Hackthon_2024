@@ -1,0 +1,77 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Search Results{% endblock title %}
+
+{% block content %}
+
+<style>
+    .highlight {
+  background-color: yellow; /* Change this to your preferred highlight color */
+  font-weight: bold; /* Optional: make the text bold */
+}
+</style>
+
+<div class="container-fluid mt--6">
+    <div class="header bg-primary pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-white d-inline-block mb-0">Search Results</h6>
+                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Search</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6 col-5 text-right">
+                        <form class="navbar-search navbar-search-light form-inline" id="navbar-search-main" method="GET" action="{{ url_for('home_blueprint.search') }}">
+                            <div class="form-group mb-0">
+                                <div class="input-group input-group-alternative input-group-merge">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="Search" type="text" name="query" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h2 class="mb-4">Search Results for "{{ query }}"</h2>
+            {% if results %}
+                <div class="list-group">
+                    {% for category in results|groupby('category') %}
+                        <h4 class="mt-4">{{ category[0] }}</h4> <!-- Category Name -->
+                        {% for result in category[1] %}
+                            <div class="list-group-item">
+                                <h5 class="mb-1">
+                                    <a href="{{ result.link }}" class="text-primary">{{ result.name | highlight(query) }}</a>
+                                </h5>
+                                <p class="mb-1 text-muted">Status: {{ result.status }} | Type: {{ result.type }} | Date: {{ result.date }}</p>
+                                <p class="mb-0">{{ result.description | highlight(query) }}</p>
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    No results found for "{{ query }}".
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascripts %}
+<!-- Include any specific JavaScript for this page here -->
+{% endblock javascripts %}

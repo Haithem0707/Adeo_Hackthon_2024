@@ -1,23 +1,19 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %} Research Icons {% endblock title %}
-
-<!-- Specific CSS goes HERE -->
-{% block stylesheets %}{% endblock stylesheets %}
+{% block title %}Search Results{% endblock title %}
 
 {% block content %}
-    <!-- Header Section -->
+<div class="container-fluid mt--6">
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Research Topics Dashboard</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Search Results</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#">Research</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Key Topics and Terms</li>
+                                <li class="breadcrumb-item active" aria-current="page">Search</li>
                             </ol>
                         </nav>
                     </div>
@@ -30,154 +26,54 @@
         </div>
     </div>
 
-    <div class="container-fluid mt--7">
-        <div class="row">
-            <div class="col">
-                <div class="card shadow">
-                    <div class="card-header bg-transparent">
-                        <h3 class="mb-0">Key Topics and Terms</h3>
-                    </div>
+    <div class="row">
+        <div class="col">
+            <h2 class="mb-4">Search Results for "{{ query }}"</h2>
+            {% if results %}
+                <div class="card">
                     <div class="card-body">
-                        <div class="row icon-examples">
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="ai" title="Copy to clipboard">
+                        <ul class="list-group">
+                            {% for result in results %}
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
                                     <div>
-                                        <i class="ni ni-settings-gear-65"></i>
-                                        <span>AI</span>
+                                        <strong>{{ result.name }}</strong>
+                                        <p class="mb-0 text-muted">Status: {{ result.status }}</p>
                                     </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="sustainability" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-leaf-2"></i>
-                                        <span>Sustainability</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="digital-transformation" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-laptop"></i>
-                                        <span>Digital Transformation</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="innovation" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-light-bulb-2"></i>
-                                        <span>Innovation</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="data-analytics" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-chart-bar-32"></i>
-                                        <span>Data Analytics</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="cybersecurity" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-lock-circle-open"></i>
-                                        <span>Cybersecurity</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="blockchain" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-key-25"></i>
-                                        <span>Blockchain</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="smart-cities" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-building"></i>
-                                        <span>Smart Cities</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="e-governance" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-planet"></i>
-                                        <span>E-Governance</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="health-tech" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-heart-2"></i>
-                                        <span>Health Tech</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="fintech" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-money-coins"></i>
-                                        <span>Fintech</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="education-tech" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-book-bookmark"></i>
-                                        <span>EdTech</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="transportation" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-bus-front-12"></i>
-                                        <span>Transportation</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="climate-change" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-cloud-upload-96"></i>
-                                        <span>Climate Change</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="urban-planning" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-collection"></i>
-                                        <span>Urban Planning</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <button type="button" class="btn-icon-clipboard" data-clipboard-text="social-impact" title="Copy to clipboard">
-                                    <div>
-                                        <i class="ni ni-people"></i>
-                                        <span>Social Impact</span>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
+                                    <a href="#" class="btn btn-sm btn-primary">Review</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
-            </div>
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    No results found for "{{ query }}".
+                </div>
+            {% endif %}
         </div>
     </div>
+
+    <!-- Random Test Data Section -->
+    <div class="row mt-4">
+        <div class="col">
+            <h3>Additional Information</h3>
+            <ul class="list-group">
+                <li class="list-group-item">1. Project Alpha: A comprehensive study on AI integration in healthcare.</li>
+                <li class="list-group-item">2. Project Beta: Sustainability initiatives for urban development.</li>
+                <li class="list-group-item">3. Project Gamma: Digital transformation strategies for government services.</li>
+                <li class="list-group-item">4. Project Delta: Healthcare improvement plans focusing on patient care.</li>
+                <li class="list-group-item">5. Project Epsilon: Urban development projects aimed at smart city solutions.</li>
+                <li class="list-group-item">6. Project Zeta: Research on renewable energy sources and their impact.</li>
+                <li class="list-group-item">7. Project Eta: Analysis of economic growth through digital innovation.</li>
+                <li class="list-group-item">8. Project Theta: Community health initiatives and their effectiveness.</li>
+                <li class="list-group-item">9. Project Iota: Strategies for enhancing public transportation systems.</li>
+                <li class="list-group-item">10. Project Kappa: Studies on climate change and urban resilience.</li>
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 
-<!-- Specific JS goes HERE --> 
 {% block javascripts %}
-
-<script src="/static/assets/vendor/clipboard/dist/clipboard.min.js"></script>
-
+<!-- Include any specific JavaScript for this page here -->
 {% endblock javascripts %}

@@ -1,9 +1,9 @@
-<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+<nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
   <div class="scrollbar-inner">
     <!-- Brand -->
-    <div class="sidenav-header  align-items-center">
+    <div class="sidenav-header align-items-center">
       <a class="navbar-brand" href="/">
-        <img src="/static/assets/img/brand/blue.png" class="navbar-brand-img" alt="Argon Design - Jinja Template Logo.">
+        <img src="/static/assets/img/brand/ADEO.png" class="navbar-brand-img" alt="Abu Dhabi Executives Office" style="max-width: 100%; height: auto;">
       </a>
     </div>
     <div class="navbar-inner">
@@ -29,14 +29,12 @@
               <span class="nav-link-text">Research</span>
             </a>
           </li>
-    
           <li class="nav-item">
             <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="/profile.html">
               <i class="ni ni-single-02 text-yellow"></i>
               <span class="nav-link-text">Profile</span>
             </a>
           </li>
-          
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('authentication_blueprint.logout') }}">
               <i class="ni ni-user-run text-red"></i>
@@ -52,33 +50,19 @@
         </h6>
         <!-- Navigation -->
         <ul class="navbar-nav mb-md-3">
-
           <li class="nav-item">
-            <a class="nav-link" 
-               target="_blank" 
-               href="#">
+            <a class="nav-link" target="_blank" href="#">
               <i class="ni ni-archive-2"></i>
               <span class="nav-link-text">Test 1</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" 
-               target="_blank" 
-               href="#">
+            <a class="nav-link" target="_blank" href="#">
               <i class="ni ni-spaceship text-red"></i>
               <span class="nav-link-text text-red">Test 2</span>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link active active-pro" 
-               target="_blank" 
-               href="#">
-              <i class="ni ni-send text-dark"></i>
-              <span class="nav-link-text">Our Logo</span>
-            </a>
-          </li>
+          
         </ul>
       </div>
     </div>
