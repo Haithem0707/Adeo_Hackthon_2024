@@ -105,7 +105,7 @@ data = {
             'id': 10,
             'name': 'AI Ethics Discussion Paper',
             'status': 'completed',
-            'link': 'https://example.com/ai-ethics-paper.docx',
+            'link': 'https://shorturl.at/hW9hh',
             'description': 'A discussion on the ethical implications of artificial intelligence.',
             'type': 'Word Document',
             'category': 'Ethics',
